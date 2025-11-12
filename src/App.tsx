@@ -1,11 +1,12 @@
 import "./App.css";
-import "./Components/Title.tsx";
-import Title from "./Components/Title.tsx";
+import Header from "./components/Header.tsx";
+import ArticleList from "./components/ArticleList.tsx";
 
 function App() {
   return (
     <>
-      <Title></Title>
+      <Header />
+      <ArticleList />
     </>
   );
 }
