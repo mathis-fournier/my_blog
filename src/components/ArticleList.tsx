@@ -8,6 +8,7 @@ export default function ArticleList() {
   const [filter, setFilter] = useState("");
   const query = "http://localhost:3001/articles?q=" + searchTerm;
 
+  // FETCH ARTICLES
   useEffect(() => {
     fetch(query)
       .then((res) => {
@@ -19,6 +20,7 @@ export default function ArticleList() {
       .then((data) => setData(data));
   }, [searchTerm]);
 
+  // HANDLE INPUTS
   function handleChange(event: any) {
     setSearchTerm(event.target.value);
   }
@@ -32,6 +34,7 @@ export default function ArticleList() {
   // FONCTION RECHERCHE (TOUT)
   function search(category: string = "", filterby?: string) {
     if (data) {
+      // init array articles (data = fetch deja filtrer par titre / tous si recherche vide)
       let searchres: Array<any> = data?.map((article: any) => (
         <ArticleThumbnail
           key={article?.id}
@@ -43,12 +46,29 @@ export default function ArticleList() {
           content={article.content || ""}
         />
       ));
+
+      // CATEGORIE
       if (category !== "") {
         searchres = searchres.filter((d) => d.props.category === category);
       }
+
+      // FILTER
       if (filterby === "liked") {
+        // + DE LIKE
         searchres = searchres.sort(
           (a, b) => b.props.likeCount - a.props.likeCount,
+        );
+      }
+      if (filterby === "asc") {
+        // RECENT
+        searchres = searchres.sort(
+          (a, b) => new Date(b.props.createdAt) - new Date(a.props.createdAt),
+        );
+      }
+      if (filterby === "desc") {
+        // ANCIEN
+        searchres = searchres.sort(
+          (a, b) => new Date(a.props.createdAt) - new Date(b.props.createdAt),
         );
       }
       console.log("search update");
