@@ -1,3 +1,5 @@
+/* https://coolors.co/palette/0d1b2a-1b263b-415a77-778da9-e0e1dd */
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -19,7 +21,7 @@
 header {
   margin-bottom: 2rem;
   padding: 0.5rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: #1b263b;
   border-radius: 26px;
 }
 
@@ -33,22 +35,28 @@ nav {
   justify-self: center;
   padding: 0.5rem 1.3rem;
   font-size: 1.1rem;
-  color: #fff;
+  color: #e0e1dd;
   transition: all 0.3s ease;
   border-radius: 6px;
 }
 
 .nav-a:hover {
-  background: #646cff;
-  color: #fff;
+  background: #778da9;
+  color: #e0e1dd;
   transform: translateY(-2px);
 }
 
 .like {
-  background-color: #1f2126;
-  border: 1px solid #646cff;
+  border-radius: 8px;
+  border: 1px solid #0d1b2a;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
   margin-bottom: 10px;
   margin-left: 15px;
+  background-color: #1b263b;
 }
 
 .hidden {
@@ -64,8 +72,8 @@ nav {
 
   height: 90%;
   width: 90%;
-  background-color: #1f2126;
-  border: 1px dotted #646cff;
+  background-color: #415a77;
+  border: 1px dotted #778da9;
   border-radius: 12px;
   text-align: center;
   align-content: center;
@@ -81,23 +89,30 @@ nav {
   margin: 10px;
 }
 
+.search_div select {
+  margin-left: 3px;
+}
 #searchbar {
+  background-color: #1b263b;
+  border: 1px solid #415a77;
   height: 30px;
   width: 30%;
 }
 
 .select_category {
+  background-color: #1b263b;
+  border: 1px solid #415a77;
   height: 30px;
-  width: 8%;
+  width: 9%;
 }
 
 .filter_by {
+  background-color: #1b263b;
+  border: 1px solid #415a77;
   height: 30px;
   width: 12%;
 }
-.like {
-  background-color: #1f2126;
-}
+
 /* Article list styles */
 .article-list {
   display: grid;
@@ -118,7 +133,7 @@ nav {
 .article-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  border-color: #646cff;
+  border-color: #778da9;
 }
 
 .article-card img {
@@ -146,7 +161,7 @@ nav {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;

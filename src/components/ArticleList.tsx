@@ -39,9 +39,9 @@ export default function ArticleList() {
         <ArticleThumbnail
           key={article?.id}
           title={article?.title || "Chargement. . ."}
-          category={article?.categoryName}
-          likeCount={article.likeCount}
-          createdAt={article.createdAt}
+          category={article?.categoryName || ""}
+          likeCount={article.likeCount || ""}
+          createdAt={article.createdAt || ""}
           image={article?.image || "https://placehold.co/150x150"}
           content={article.content || ""}
         />
@@ -62,13 +62,15 @@ export default function ArticleList() {
       if (filterby === "asc") {
         // RECENT
         searchres = searchres.sort(
-          (a, b) => new Date(b.props.createdAt) - new Date(a.props.createdAt),
+          (a, b) =>
+            Date.parse(b.props.createdAt) - Date.parse(a.props.createdAt),
         );
       }
       if (filterby === "desc") {
         // ANCIEN
         searchres = searchres.sort(
-          (a, b) => new Date(a.props.createdAt) - new Date(b.props.createdAt),
+          (a, b) =>
+            Date.parse(a.props.createdAt) - Date.parse(b.props.createdAt),
         );
       }
       console.log("search update");
@@ -100,9 +102,13 @@ export default function ArticleList() {
             Categories
           </option>
           <option value={""}>Tous</option>
+          <option value={"JavaScript"}>JavaScript</option>
           <option value={"Angular"}>Angular</option>
           <option value={"React"}>React</option>
+          <option value={"Spring"}>Spring</option>
+          <option value={"Base de données"}>Database</option>
           <option value={"API"}>API</option>
+          <option value={"Web"}>Web</option>
         </select>
 
         {/* SELECT FILTRES (RECENT / LIKE / ANCIEN) */}
