@@ -1,12 +1,15 @@
 import "./App.css";
-import Header from "./components/Header.tsx";
-import ArticleList from "./components/ArticleList.tsx";
+import { Routes, Route } from "react-router-dom";
+import Home from "./Pages/home.tsx";
+import Articles from "./Pages/Articles.tsx";
 
 function App() {
   return (
     <>
-      <Header />
-      <ArticleList />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/articles" element={<Articles />} />
+      </Routes>
     </>
   );
 }

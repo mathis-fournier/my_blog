@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 function Header() {
   const title = "";
 
@@ -5,18 +6,8 @@ function Header() {
     <>
       <header>
         <nav>
-          <a href="" className="nav-a">
-            Accueil
-          </a>
-          <a href="" className="nav-a">
-            aaa
-          </a>
-          <a href="" className="nav-a">
-            bbb
-          </a>
-          <a href="" className="nav-a">
-            ccc
-          </a>
+          <NavLink to="/">Accueil</NavLink>
+          <NavLink to="/articles">Articles</NavLink>
         </nav>
       </header>
 

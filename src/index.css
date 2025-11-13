@@ -58,3 +58,30 @@ button:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px #646cff;
 }
+
+nav a {
+  color: white;
+  justify-self: center;
+  padding: 0.5rem 1.3rem;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+header {
+  margin-bottom: 2rem;
+  padding: 0.5rem;
+  background: #1b263b;
+  border-radius: 26px;
+}
+
+nav {
+  display: flex;
+  padding: 0.5rem 1rem;
+  justify-content: left;
+}
+
+.nav-a:hover {
+  background: #778da9;
+  color: #e0e1dd;
+  transform: translateY(-2px);
+}

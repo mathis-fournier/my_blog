@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import ArticleThumbnail from "./ArticleThumbnail";
+import Header from "./Header";
+import { useSearchParams } from "react-router";
 
 export default function ArticleList() {
   const [data, setData] = useState([{ id: 0, title: "", description: "" }]);
-  const [searchTerm, setSearchTerm] = useState("");
   const [category, setCategory] = useState("");
   const [filter, setFilter] = useState("");
-  const query = "http://localhost:3001/articles?q=" + searchTerm;
+  let [searchParams, setSearchParams] = useSearchParams();
+  const query = "http://localhost:3001/articles?" + searchParams.toString();
+  console.log(query);
 
   // FETCH ARTICLES
   useEffect(() => {
@@ -18,11 +21,13 @@ export default function ArticleList() {
         return res.json();
       })
       .then((data) => setData(data));
-  }, [searchTerm]);
+  }, [searchParams]);
 
   // HANDLE INPUTS
   function handleChange(event: any) {
-    setSearchTerm(event.target.value);
+    setTimeout(() => {
+      setSearchParams("title_like=" + event.target.value);
+    }, 800);
   }
   function handleCategory(event: any) {
     setCategory(event.target.value);
@@ -81,6 +86,7 @@ export default function ArticleList() {
 
   return (
     <>
+      <Header />
       <div className="search_div">
         {/* BARRE RECHERCHE (= TITRE / CONTENT) */}
         <input
