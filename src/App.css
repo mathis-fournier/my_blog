@@ -18,19 +18,19 @@
 /* Header styles */
 header {
   margin-bottom: 2rem;
-  padding: 1rem;
+  padding: 0.5rem;
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
+  border-radius: 26px;
 }
 
 nav {
   display: flex;
-  align-items: left;
   padding: 0.5rem 1rem;
+  justify-content: left;
 }
 
 .nav-a {
+  justify-self: center;
   padding: 0.5rem 1.3rem;
   font-size: 1.1rem;
   color: #fff;
@@ -84,6 +84,16 @@ nav {
 #searchbar {
   height: 30px;
   width: 30%;
+}
+
+.select_category {
+  height: 30px;
+  width: 10%;
+}
+
+.filter_by {
+  height: 30px;
+  width: 10%;
 }
 .like {
   background-color: #1f2126;
@@ -145,4 +155,12 @@ nav {
 
 .article-card {
   animation: fadeIn 0.5s ease-out forwards;
+}
+
+@media (max-width: 850px) {
+  nav {
+    display: flex;
+    padding: 0.5rem 1rem;
+    justify-content: center;
+  }
 }
