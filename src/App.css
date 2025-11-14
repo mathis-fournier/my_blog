@@ -27,7 +27,7 @@
   transition: all 0.3s ease;
   margin-bottom: 10px;
   margin-left: 15px;
-  background-color: #1b263b;
+  background-color: #80808012;
 }
 
 .hidden {
@@ -43,7 +43,7 @@
 
   height: 90%;
   width: 90%;
-  background-color: #415a77;
+  background-color: #0d1b2a;
   border: 1px dotted #778da9;
   border-radius: 12px;
   text-align: center;
@@ -64,23 +64,23 @@
   margin-left: 3px;
 }
 #searchbar {
-  background-color: #1b263b;
+  background-color: #80808012;
   border: 1px solid #415a77;
-  height: 30px;
   width: 30%;
+  height: 3em;
 }
 
 .select_category {
-  background-color: #1b263b;
+  background-color: #80808012;
   border: 1px solid #415a77;
-  height: 30px;
+  height: 3em;
   width: 9%;
 }
 
 .filter_by {
-  background-color: #1b263b;
+  background-color: #80808012;
   border: 1px solid #415a77;
-  height: 30px;
+  height: 3em;
   width: 12%;
 }
 

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import ArticleThumbnail from "./ArticleThumbnail";
-import Header from "./Header";
-import { useSearchParams } from "react-router";
+import { useNavigate, useSearchParams } from "react-router";
 
 export default function ArticleList() {
   const [data, setData] = useState([{ id: 0, title: "", description: "" }]);
@@ -9,7 +8,6 @@ export default function ArticleList() {
   const [filter, setFilter] = useState("");
   let [searchParams, setSearchParams] = useSearchParams();
   const query = "http://localhost:3001/articles?" + searchParams.toString();
-  console.log(query);
 
   // FETCH ARTICLES
   useEffect(() => {
@@ -43,6 +41,7 @@ export default function ArticleList() {
       let searchres: Array<any> = data?.map((article: any) => (
         <ArticleThumbnail
           key={article?.id}
+          id={article.id}
           title={article?.title || "Chargement. . ."}
           category={article?.categoryName || ""}
           likeCount={article.likeCount || ""}
@@ -86,7 +85,6 @@ export default function ArticleList() {
 
   return (
     <>
-      <Header />
       <div className="search_div">
         {/* BARRE RECHERCHE (= TITRE / CONTENT) */}
         <input

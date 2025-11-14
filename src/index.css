@@ -3,7 +3,10 @@
   font-weight: 400;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #0d1b2a;
+  background-image:
+    linear-gradient(to right, #80808012 1px, transparent 1px),
+    linear-gradient(to bottom, #80808012 1px, transparent 1px);
+  background-size: 24px 24px;
   color: #e0e1dd;
 }
 
@@ -42,7 +45,8 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1b263b;
+  background-color: #80808012;
+  opacity: 1;
   border: 1px solid #0d1b2a;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -51,12 +55,6 @@ button {
 button:hover {
   border-color: #778da9;
   transform: translateY(-2px);
-}
-
-button:focus,
-button:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px #646cff;
 }
 
 nav a {
@@ -70,7 +68,7 @@ nav a {
 header {
   margin-bottom: 2rem;
   padding: 0.5rem;
-  background: #1b263b;
+  background: #80808012;
   border-radius: 26px;
 }
 
