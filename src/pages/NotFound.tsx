@@ -1,7 +1,7 @@
 export default function NotFound() {
   return (
     <>
-      <h3>404</h3>
+      <img className="img404" src="/src/assets/images/404.png" alt="404" />
     </>
   );
 }

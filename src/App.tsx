@@ -5,6 +5,7 @@ import ArticlesPage from "./pages/ArticlesPage.tsx";
 import ArticlePage from "./pages/ArticlePage.tsx";
 import Header from "./components/Header.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import CreateArticlePage from "./pages/CreateArticlePage.tsx";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/articles" element={<ArticlesPage />} />
         <Route path="/article/:id" element={<ArticlePage />} />
+        <Route path="articles/new" element={<CreateArticlePage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

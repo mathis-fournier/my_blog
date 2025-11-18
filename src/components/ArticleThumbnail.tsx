@@ -33,7 +33,7 @@ function ArticleThumbnail(props: any) {
   return (
     <>
       <div className="article-card">
-        <img src={props.image} alt="" />
+        <img src={props.image || "error"} alt={props.id} loading="lazy" />
         <h2>{props.title}</h2>
         <button className="details" onClick={handleDetails}>
           Details
@@ -43,7 +43,7 @@ function ArticleThumbnail(props: any) {
         </button>
       </div>
       <div className={status}>
-        <img src={props.image} className="modal-image" alt="" />
+        <img src={props.image || "error"} className="modal-image" alt="" />
         <h2>{props.title}</h2>
         <p>Nombre de like : {props.likeCount}</p>
         <p>Categorie : {props.category}</p>

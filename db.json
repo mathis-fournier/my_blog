@@ -71,7 +71,7 @@
       "title": "Guide de démarrage avec MongoDB",
       "content": "MongoDB est une base de données NoSQL orientée documents, conçue pour être flexible, scalable et facile à manipuler. Contrairement aux bases relationnelles traditionnelles, MongoDB utilise un format BSON proche de JSON, ce qui facilite la modélisation d’objets complexes. Grâce à son architecture distribuée, il permet une montée en charge horizontale et une haute disponibilité via le sharding et la réplication. Pour débuter, il est essentiel de comprendre les concepts clés comme les collections, les documents, les index et les opérations CRUD. MongoDB s'intègre parfaitement dans les architectures modernes, notamment celles basées sur Node.js, ce qui en fait une solution idéale pour des applications web performantes.",
       "createdAt": "2023-03-05",
-      "image": "https://placehold.co/150x150",
+      "image": "src/assets/images/mongodb.png",
       "likeCount": 45,
       "isPublished": false,
       "categoryName": "Base de données",
@@ -104,7 +104,7 @@
       "title": "GraphQL vs REST: Lequel choisir ?",
       "content": "GraphQL et REST sont deux approches majeures pour concevoir des APIs, chacune possédant ses avantages. REST repose sur une architecture simple basée sur des endpoints clairement définis et des verbes HTTP standards. GraphQL, quant à lui, utilise un schéma unique permettant au client de spécifier exactement quelles données il souhaite récupérer, limitant ainsi la surcharge réseau. GraphQL est idéal dans les applications nécessitant des échanges de données complexes ou multiples, tandis que REST demeure une solution simple, largement adoptée et très bien documentée. Le choix entre les deux dépend souvent des besoins du projet, du niveau de granularité des données et de la structure de l’équipe de développement.",
       "createdAt": "2022-10-15",
-      "image": "https://placehold.co/150x150",
+      "image": "src/assets/images/graph-rest.png",
       "likeCount": 75,
       "isPublished": false,
       "categoryName": "API",
@@ -115,7 +115,7 @@
       "title": "Créer une Single Page Application avec React",
       "content": "Créer une Single Page Application (SPA) avec React permet d’offrir une expérience fluide et rapide en évitant les rechargements complets de page. React facilite ce modèle grâce à son rendu basé sur un Virtual DOM performant et une architecture orientée composants. Une SPA bien conçue repose généralement sur un système de routing solide, une gestion centralisée de l’état (Redux, Zustand, Context API…) et une optimisation des performances via le code splitting ou l’utilisation de hooks intelligents. Ce type d’application est idéal pour les plateformes dynamiques nécessitant des interactions fréquentes, comme les dashboards ou les réseaux sociaux.",
       "createdAt": "2022-09-20",
-      "image": "https://placehold.co/150x150",
+      "image": "src/assets/images/SPA.png",
       "likeCount": 92,
       "isPublished": true,
       "categoryName": "React",
@@ -175,6 +175,28 @@
       "isPublished": true,
       "categoryName": "Web",
       "isLiked": false
+    },
+    {
+      "title": "test",
+      "content": "test",
+      "createdAt": "18/11/2025",
+      "image": "src/assets/images/pwa.png",
+      "likeCount": 0,
+      "isPublished": true,
+      "categoryName": "",
+      "isLiked": false,
+      "id": "je2jP7O"
+    },
+    {
+      "title": "iiio",
+      "content": "",
+      "createdAt": "18/11/2025",
+      "image": "",
+      "likeCount": 0,
+      "isPublished": true,
+      "categoryName": "",
+      "isLiked": false,
+      "id": "OFZxh5a"
     }
   ]
 }

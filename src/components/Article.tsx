@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import "./Article.css";
 export default function Article(props: any) {
   const navigate = useNavigate();
-
   function handleClick() {
     navigate("/articles");
   }
