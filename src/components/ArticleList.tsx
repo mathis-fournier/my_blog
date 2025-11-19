@@ -109,9 +109,13 @@ export default function ArticleList() {
       </div>
 
       <div className="article-list">
-        {filteredData.map((article) => (
-          <ArticleThumbnail key={article.id} {...article} />
-        ))}
+        {filteredData.length > 0 ? (
+          filteredData.map((article) => (
+            <ArticleThumbnail key={article.id} {...article} />
+          ))
+        ) : (
+          <ArticleThumbnail title="Loading . . ." />
+        )}
       </div>
     </>
   );

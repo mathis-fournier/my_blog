@@ -22,7 +22,20 @@ export default function ArticleEditPage() {
       headers: {
         "Content-Type": "application/json",
       },
-    });
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Network response was not ok: " + res.statusText);
+        }
+        return res.json();
+      })
+      .then((result) => {
+        console.log("Success:", result);
+      })
+      .catch((error) => {
+        console.error("error:", error);
+      });
+
     navigate("/articles");
   }
 
@@ -61,7 +74,7 @@ export default function ArticleEditPage() {
           <button type="submit">Valider</button>
         </form>
       ) : (
-        <p>Loading</p>
+        <h1>Loading. . .</h1>
       )}
     </>
   );

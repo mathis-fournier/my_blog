@@ -20,7 +20,7 @@ export default function Article(props: any) {
         Retour
       </button>
       <button className="edit" onClick={handleEdit}>
-        Edit
+        Modifier
       </button>
     </>
   );

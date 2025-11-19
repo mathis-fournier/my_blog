@@ -50,7 +50,7 @@ function ArticleThumbnail(props: any) {
         <img src={props.image || "error"} className="modal-image" alt="" />
         <h2>{props.title}</h2>
         <p>Nombre de like : {props.likeCount}</p>
-        <p>Categorie : {props.category}</p>
+        <p>Categorie : {props.categoryName}</p>
         <button className="" onClick={handleOpenDetails}>
           Acceder à l'article
         </button>
