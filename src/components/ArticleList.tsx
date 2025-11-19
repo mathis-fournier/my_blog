@@ -2,7 +2,6 @@ import { useEffect, useMemo, useState } from "react";
 import ArticleThumbnail from "./ArticleThumbnail";
 import { useSearchParams } from "react-router";
 
-// Simple debounce utility
 function debounce(fn: Function, delay: number) {
   let timer: any;
   return (...args: any[]) => {
@@ -24,6 +23,7 @@ export default function ArticleList() {
     fetch(query)
       .then((res) => {
         if (!res.ok) throw new Error(`Erreur Status: ${res.status}`);
+
         return res.json();
       })
       .then((data) => setData(data));
@@ -68,7 +68,7 @@ export default function ArticleList() {
       results.sort((a, b) => Date.parse(a.createdAt) - Date.parse(b.createdAt));
     }
 
-    return results;
+    return results.filter((res) => res.isPublished !== "false");
   }, [data, category, filter]);
 
   return (

@@ -29,6 +29,10 @@ function ArticleThumbnail(props: any) {
     console.log(props.id);
     navigate("/article/" + props.id);
   }
+  function handleOpenEdit() {
+    console.log(props.id);
+    navigate("/article/" + props.id + "/edit");
+  }
 
   return (
     <>
@@ -50,6 +54,10 @@ function ArticleThumbnail(props: any) {
         <button className="" onClick={handleOpenDetails}>
           Acceder à l'article
         </button>
+        <button className="" onClick={handleOpenEdit}>
+          Modifier
+        </button>
+        <br />
         <button className="close-modal" onClick={handleDetails}>
           Fermer
         </button>

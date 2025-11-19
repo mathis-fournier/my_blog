@@ -5,6 +5,10 @@ export default function Article(props: any) {
   function handleClick() {
     navigate("/articles");
   }
+
+  function handleEdit() {
+    navigate("edit");
+  }
   return (
     <>
       <div className="article">
@@ -14,6 +18,9 @@ export default function Article(props: any) {
       </div>
       <button className="retour" onClick={handleClick}>
         Retour
+      </button>
+      <button className="edit" onClick={handleEdit}>
+        Edit
       </button>
     </>
   );
