@@ -37,7 +37,7 @@ function ArticleThumbnail(props: any) {
   return (
     <>
       <div className="article-card">
-        <img src={props.image || "error"} alt={props.id} loading="lazy" />
+        <img src={props.image || "error"} alt={props.title} loading="lazy" />
         <h2>{props.title}</h2>
         <button className="details" onClick={handleDetails}>
           Details

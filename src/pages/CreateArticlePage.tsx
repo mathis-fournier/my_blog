@@ -20,6 +20,7 @@ export default function CreateArticlePage() {
     event.preventDefault();
     setIsLoading(true);
     setError(null);
+    if (x) x.className = "show";
     fetch("http://localhost:3001/articles", {
       method: "POST",
       body: JSON.stringify(newArticle),
@@ -28,16 +29,16 @@ export default function CreateArticlePage() {
       },
     })
       .then((res) => {
+        if (res.ok) x.textContent = "Article crée avec succes";
         if (!res.ok) throw new Error("Erreur serveur");
         return res.json();
       })
       .then((data) => {
         console.log("Article créé :", data);
-        x.className = "show";
         setTimeout(function () {
           (x.className = x.className.replace("show", "")),
             navigate("/articles");
-        }, 3000);
+        }, 2000);
       })
       .catch((err) => setError(err.message))
       .finally(() => setIsLoading(false));
@@ -68,6 +69,14 @@ export default function CreateArticlePage() {
             })
           }
         />
+        <input
+          type="text"
+          placeholder="Image link"
+          value={newArticle.image}
+          onChange={(e) =>
+            setNewArticle({ ...newArticle, image: e.target.value })
+          }
+        />
         <textarea
           placeholder="Contenu"
           value={newArticle.content}
@@ -85,7 +94,6 @@ export default function CreateArticlePage() {
           <option value={""} disabled>
             Categories
           </option>
-          <option value={""}>Tous</option>
           <option value={"JavaScript"}>JavaScript</option>
           <option value={"Angular"}>Angular</option>
           <option value={"React"}>React</option>
@@ -99,7 +107,7 @@ export default function CreateArticlePage() {
           Créer l'article
         </button>
       </form>
-      <div id="snackbar">Article crée avec succès</div>
+      <div id="snackbar">Article en cours de création. . .</div>
     </>
   );
 }

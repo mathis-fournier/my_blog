@@ -33,7 +33,7 @@ export default function ArticleList() {
     () =>
       debounce((value: string) => {
         setSearchParams("title_like=" + value);
-      }, 0),
+      }, 1),
     [],
   );
 
