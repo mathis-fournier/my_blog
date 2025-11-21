@@ -9,6 +9,7 @@ export default function Article(props: any) {
   function handleEdit() {
     navigate("edit");
   }
+
   return (
     <>
       <div className="article">

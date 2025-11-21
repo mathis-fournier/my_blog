@@ -20,7 +20,8 @@
       "likeCount": 99,
       "isPublished": true,
       "categoryName": "API",
-      "isLiked": false
+      "isLiked": false,
+      "select_category": "React"
     },
     {
       "id": "3",
@@ -157,7 +158,7 @@
     {
       "id": "15",
       "title": "Les hooks dans React",
-      "content": "Les hooks offrent une nouvelle façon de gérer l’état, le cycle de vie et les effets secondaires dans les composants fonctionnels de React. Introduits à partir de la version 16.8, ils permettent d'écrire des composants plus légers, plus lisibles et plus faciles à composer. Parmi les hooks les plus utilisés, on retrouve useState, useEffect, useMemo et useCallback, chacun apportant des capacités spécifiques. Les hooks personnalisés offrent encore plus de flexibilité en permettant de réutiliser de la logique métier entre plusieurs composants. Grâce à eux, la gestion de l’état est devenue plus intuitive, rendant React encore plus puissant et agréable à utiliser.",
+      "content": "Les hooks offrent une nouvelle façon de gérer l'état, le cycle de vie et les effets secondaires dans les composants fonctionnels de React. Introduits à partir de la version 16.8, ils permettent d'écrire des composants plus légers, plus lisibles et plus faciles à composer. Parmi les hooks les plus utilisés, on retrouve useState, useEffect, useMemo et useCallback, chacun apportant des capacités spécifiques. Les hooks personnalisés offrent encore plus de flexibilité en permettant de réutiliser de la logique métier entre plusieurs composants. Grâce à eux, la gestion de l’état est devenue plus intuitive, rendant React encore plus puissant et agréable à utiliser.",
       "createdAt": "2022-05-05",
       "image": "src/assets/images/react_hook.png",
       "likeCount": 78,
@@ -175,138 +176,6 @@
       "isPublished": true,
       "categoryName": "Web",
       "isLiked": false
-    },
-    {
-      "title": "qzdzd",
-      "content": "qzd",
-      "createdAt": "19/11/2025",
-      "image": "",
-      "likeCount": 0,
-      "isPublished": true,
-      "categoryName": "test",
-      "isLiked": false,
-      "id": "KEkHt_P"
-    },
-    {
-      "title": "test",
-      "content": "test",
-      "createdAt": "19/11/2025",
-      "image": "https://picsum.photos/150",
-      "likeCount": 0,
-      "isPublished": true,
-      "categoryName": "React",
-      "isLiked": false,
-      "id": "X6khchh"
-    },
-    {
-      "title": "",
-      "content": "",
-      "createdAt": "19/11/2025",
-      "image": "",
-      "likeCount": 0,
-      "isPublished": true,
-      "categoryName": "",
-      "isLiked": false,
-      "id": "FPod3Zy"
-    },
-    {
-      "title": "qzd",
-      "content": "qzd",
-      "createdAt": "19/11/2025",
-      "image": "",
-      "likeCount": 0,
-      "isPublished": true,
-      "categoryName": "",
-      "isLiked": false,
-      "id": "JJ1XRHr"
-    },
-    {
-      "title": "",
-      "content": "",
-      "createdAt": "19/11/2025",
-      "image": "",
-      "likeCount": 0,
-      "isPublished": true,
-      "categoryName": "",
-      "isLiked": false,
-      "id": "bJH0liE"
-    },
-    {
-      "title": "qtest",
-      "content": "qzd",
-      "createdAt": "19/11/2025",
-      "image": "",
-      "likeCount": 0,
-      "isPublished": true,
-      "categoryName": "",
-      "isLiked": false,
-      "id": "clynOba"
-    },
-    {
-      "title": "qzd",
-      "content": "qzd",
-      "createdAt": "19/11/2025",
-      "image": "",
-      "likeCount": 0,
-      "isPublished": true,
-      "categoryName": "",
-      "isLiked": false,
-      "id": "WkOiYXb"
-    },
-    {
-      "title": "test",
-      "content": "test\n\n",
-      "createdAt": "19/11/2025",
-      "image": "",
-      "likeCount": 0,
-      "isPublished": true,
-      "categoryName": "JavaScript",
-      "isLiked": false,
-      "id": "Qlf6zTN"
-    },
-    {
-      "title": "test",
-      "content": "",
-      "createdAt": "19/11/2025",
-      "image": "",
-      "likeCount": 0,
-      "isPublished": true,
-      "categoryName": "",
-      "isLiked": false,
-      "id": "y45N_op"
-    },
-    {
-      "title": "test",
-      "content": "",
-      "createdAt": "19/11/2025",
-      "image": "",
-      "likeCount": 0,
-      "isPublished": true,
-      "categoryName": "",
-      "isLiked": false,
-      "id": "YMMjBUu"
-    },
-    {
-      "title": "qzd",
-      "content": "qzd",
-      "createdAt": "19/11/2025",
-      "image": "",
-      "likeCount": 0,
-      "isPublished": true,
-      "categoryName": "",
-      "isLiked": false,
-      "id": "0P6oKhh"
-    },
-    {
-      "title": "ss",
-      "content": "",
-      "createdAt": "19/11/2025",
-      "image": "",
-      "likeCount": 0,
-      "isPublished": true,
-      "categoryName": "",
-      "isLiked": false,
-      "id": "fHowjvI"
     }
   ]
 }

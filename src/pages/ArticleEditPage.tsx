@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-
+import "./ArticleEdit.css";
 export default function ArticleEditPage() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [data, setData] = useState<any>(null);
+  const [error, setError] = useState("");
   useEffect(() => {
     fetch("http://localhost:3001/articles/" + id)
       .then((res) => {
@@ -25,7 +26,7 @@ export default function ArticleEditPage() {
     })
       .then((res) => {
         if (!res.ok) {
-          throw new Error("Network response was not ok: " + res.statusText);
+          throw new Error("erreur reseau  : " + res.statusText);
         }
         return res.json();
       })
@@ -39,6 +40,24 @@ export default function ArticleEditPage() {
     navigate("/articles");
   }
 
+  function deleteArticle() {
+    fetch("http://localhost:3001/articles/" + id, {
+      method: "DELETE",
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Impossible de supprimer l'article");
+        }
+        navigate("/articles");
+      })
+      .catch((err) => {
+        console.error(err);
+        setError(
+          err.message || "Une erreur est survenue lors de la suppression",
+        );
+      });
+  }
+
   function handleInput(event: any) {
     const { name, value } = event.target;
     setData((prev: any) => ({
@@ -49,6 +68,7 @@ export default function ArticleEditPage() {
 
   return (
     <>
+      {error ? <h2>{error}</h2> : ""}
       {data ? (
         <form onSubmit={handleSubmit}>
           <label htmlFor="title">Titre</label>
@@ -65,13 +85,19 @@ export default function ArticleEditPage() {
             onChange={handleInput}
           />
           <label htmlFor="categoryName">Categorie</label>
-          <input
-            type="text"
-            name="categoryName"
-            value={data.categoryName}
-            onChange={handleInput}
-          />
+          <select name="categoryName" defaultValue={""} onChange={handleInput}>
+            <option value={"JavaScript"}>JavaScript</option>
+            <option value={"Angular"}>Angular</option>
+            <option value={"React"}>React</option>
+            <option value={"Spring"}>Spring</option>
+            <option value={"Base de données"}>Database</option>
+            <option value={"API"}>API</option>
+            <option value={"Web"}>Web</option>
+          </select>
           <button type="submit">Valider</button>
+          <button onClick={deleteArticle} className="delete">
+            Supprimer
+          </button>
         </form>
       ) : (
         <h1>Loading. . .</h1>
