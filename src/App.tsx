@@ -11,15 +11,17 @@ import ArticleEditPage from "./pages/ArticleEditPage.tsx";
 function App() {
   return (
     <>
-      <Header />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/articles" element={<ArticlesPage />} />
-        <Route path="/article/:id" element={<ArticlePage />} />
-        <Route path="articles/new" element={<CreateArticlePage />} />
-        <Route path="article/:id/edit" element={<ArticleEditPage />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <div className="app-root">
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/articles" element={<ArticlesPage />} />
+          <Route path="/article/:id" element={<ArticlePage />} />
+          <Route path="articles/new" element={<CreateArticlePage />} />
+          <Route path="article/:id/edit" element={<ArticleEditPage />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
     </>
   );
 }

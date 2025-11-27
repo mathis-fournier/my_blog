@@ -21,27 +21,29 @@ export default function CreateArticlePage() {
     setIsLoading(true);
     setError(null);
     if (x) x.className = "show";
-    fetch("http://localhost:3001/articles", {
-      method: "POST",
-      body: JSON.stringify(newArticle),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => {
-        if (res.ok) x.textContent = "Article crée avec succes";
-        if (!res.ok) throw new Error("Erreur serveur");
-        return res.json();
+    if (!newArticle.title && newArticle.content === "") {
+      fetch("http://localhost:3001/articles", {
+        method: "POST",
+        body: JSON.stringify(newArticle),
+        headers: {
+          "Content-Type": "application/json",
+        },
       })
-      .then((data) => {
-        console.log("Article créé :", data);
-        setTimeout(function () {
-          (x.className = x.className.replace("show", "")),
-            navigate("/articles");
-        }, 2000);
-      })
-      .catch((err) => setError(err.message))
-      .finally(() => setIsLoading(false));
+        .then((res) => {
+          if (res.ok) x.textContent = "Article crée avec succes";
+          if (!res.ok) throw new Error("Erreur serveur");
+          return res.json();
+        })
+        .then((data) => {
+          console.log("Article créé :", data);
+          setTimeout(function () {
+            (x.className = x.className.replace("show", "")),
+              navigate("/articles");
+          }, 2000);
+        })
+        .catch((err) => setError(err.message))
+        .finally(() => setIsLoading(false));
+    }
   }
   return (
     <>

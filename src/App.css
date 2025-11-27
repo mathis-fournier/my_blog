@@ -43,7 +43,7 @@
 
   height: 90%;
   width: 90%;
-  background-color: #0d1b2a;
+  background-color: rgba(26, 26, 26, 0.998);
   border: 1px dotted #778da9;
   border-radius: 12px;
   text-align: center;
@@ -93,7 +93,7 @@
 }
 
 .article-card {
-  background: rgba(164, 164, 164, 0.1);
+  background: rgba(26, 26, 26, 1);
   border-radius: 12px;
   padding: 1.5rem;
   transition: all 0.3s ease;
@@ -150,4 +150,10 @@
     padding: 0.5rem 1rem;
     justify-content: center;
   }
+}
+
+/* Ensure app content renders above the background cursor */
+.app-root {
+  position: relative;
+  z-index: 1;
 }
