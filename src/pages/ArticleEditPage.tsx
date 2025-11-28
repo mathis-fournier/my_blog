@@ -6,6 +6,7 @@ export default function ArticleEditPage() {
   const navigate = useNavigate();
   const [data, setData] = useState<any>(null);
   const [error, setError] = useState("");
+  const x = document.getElementById("snackbar")!;
   useEffect(() => {
     fetch("http://localhost:3001/articles/" + id)
       .then((res) => {
@@ -41,22 +42,38 @@ export default function ArticleEditPage() {
   }
 
   function deleteArticle() {
-    fetch("http://localhost:3001/articles/" + id, {
-      method: "DELETE",
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Impossible de supprimer l'article");
-        }
-        navigate("/articles");
+    let text = "";
+    if (confirm("Supprimer l'article") == true) {
+      text = "confirm";
+    } else {
+      text = "cancel";
+    }
+    if (text === "confirm") {
+      if (x) x.className = "show";
+      fetch("http://localhost:3001/articles/" + id, {
+        method: "DELETE",
       })
-      .catch((err) => {
-        setError(
-          err.message || "Une erreur est survenue lors de la suppression",
-        );
+        .then((response) => {
+          if (response.ok) {
+            x.textContent = "Article supprimé avec succes";
+            setTimeout(function () {
+              (x.className = x.className.replace("show", "")),
+                navigate("/articles");
+            }, 2000);
+          } else {
+            throw new Error("Impossible de supprimer l'article");
+          }
+        })
+        .catch((err) => {
+          setError(
+            err.message || "Une erreur est survenue lors de la suppression",
+          );
 
-        console.log(error);
-      });
+          console.log(error);
+        });
+    } else if (text === "cancel") {
+      console.log("supression annulée");
+    }
   }
 
   function handleInput(event: any) {
@@ -96,13 +113,15 @@ export default function ArticleEditPage() {
             <option value={"Web"}>Web</option>
           </select>
           <button type="submit">Valider</button>
-          <button onClick={deleteArticle} className="delete">
+          <button type="button" onClick={deleteArticle} className="delete">
             Supprimer
           </button>
         </form>
       ) : (
         <h1>Loading. . .</h1>
       )}
+
+      <div id="snackbar">Article en cours de création. . .</div>
     </>
   );
 }

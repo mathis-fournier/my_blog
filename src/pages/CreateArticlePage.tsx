@@ -21,7 +21,7 @@ export default function CreateArticlePage() {
     setIsLoading(true);
     setError(null);
     if (x) x.className = "show";
-    if (!newArticle.title && newArticle.content === "") {
+    if (newArticle.title !== "") {
       fetch("http://localhost:3001/articles", {
         method: "POST",
         body: JSON.stringify(newArticle),
