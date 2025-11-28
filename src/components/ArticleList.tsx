@@ -74,14 +74,22 @@ export default function ArticleList() {
   return (
     <>
       <div className="search_div">
+        <label htmlFor="recherche" className="hidden">
+          Recherche
+        </label>
         <input
+          name="recherche"
           onChange={handleSearchInput}
-          placeholder="search"
+          placeholder="Rechercher"
           id="searchbar"
         />
 
+        <label htmlFor="select_category" className="hidden">
+          Categories
+        </label>
         <select
           defaultValue=""
+          name="select_category"
           onChange={handleCategory}
           className="select_category"
         >
@@ -98,7 +106,15 @@ export default function ArticleList() {
           <option value="Web">Web</option>
         </select>
 
-        <select defaultValue="" onChange={handleFilter} className="filter_by">
+        <label htmlFor="filtrer" className="hidden">
+          Filtrer
+        </label>
+        <select
+          name="filtrer"
+          defaultValue=""
+          onChange={handleFilter}
+          className="filter_by"
+        >
           <option value="" disabled>
             Trier
           </option>

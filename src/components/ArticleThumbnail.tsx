@@ -36,16 +36,23 @@ function ArticleThumbnail(props: any) {
 
   return (
     <>
-      <div className="article-card">
-        <img src={props.image || "error"} alt={props.title} loading="lazy" />
-        <h2>{props.title}</h2>
-        <button className="details" onClick={handleDetails}>
-          Details
-        </button>
-        <button className="like" onClick={handleClick}>
-          {buttonText}
-        </button>
-      </div>
+      <button className="article-card" onClick={handleDetails}>
+        <div className="">
+          <img src={props.image || "error"} alt={props.title} loading="lazy" />
+          <h2>{props.title}</h2>
+          <button
+            type="button"
+            className="like"
+            onClick={(e) => {
+              e.stopPropagation();
+              handleClick();
+            }}
+          >
+            {buttonText}
+          </button>
+        </div>
+      </button>
+
       <div className={status}>
         <img src={props.image || "error"} className="modal-image" alt="" />
         <h2>{props.title}</h2>
